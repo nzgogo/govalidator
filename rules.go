@@ -57,6 +57,10 @@ func init() {
 			if rv.Len() == 0 {
 				return err
 			}
+		case reflect.Bool:
+			if _, ok := value.(bool); !ok {
+				return err
+			}
 		case reflect.Int:
 			if isEmpty(value.(int)) {
 				return err
